@@ -11,12 +11,18 @@ endif
 
 
 import autoload 'qline.vim'
+import autoload 'qline/config.vim'
 import autoload '../private/qline/colorscheme.vim'
 import autoload '../private/qline/showcase.vim'
 
 
-command -nargs=1 -complete=custom,colorscheme.GetList
-      \ QlineColorscheme colorscheme.Set(<q-args>)
+command -nargs=? -complete=custom,colorscheme.GetList QlineColorscheme {
+  if <q-args> == ''
+    echo config.Get('colorscheme')
+  else
+    colorscheme.Set(<q-args>)
+  endif
+}
 command QlineShowcase showcase.Start()
 
 
