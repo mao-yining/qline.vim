@@ -136,6 +136,7 @@ let g:qline_config.colorscheme = 'airline:cool'
 
 or use `:QlineColorscheme` to change the colorscheme after startup.
 
+`:QlineShowcase` shows all the available colorschemes with a fancy preview.
 
 ## Troubleshooting
 
